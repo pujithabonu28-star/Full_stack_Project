@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %} Blood Donation {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-start"> <!-- Added row with left alignment -->
+        <div class="col-md-4"> <!-- Set the column size -->
+            <div class="card" style="border-radius: 15px; background-color: #f8f9fa;"> <!-- Light background color -->
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i style="font-weight: bold;">Login</i></h5>
+                    <div class="text-center">
+                        <h6> Haven't Registered yet? <a href="/become_donor/" class="btn btn btn-success" style="color: white; font-size:medium; width: 6rem;">signup</a>
+                        </h6>
+                         </div>
+                    <form method="POST"> {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="username" class="form-label"><i style="font-weight: bold;">Username</i></label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label"><i style="font-weight: bold;">Password</i></label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="Submit" class="btn btn-danger" style="color: white; font-size: larger; width: 8rem;">
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% if error_message %}
+  <div class="alert alert-danger">
+    {{ error_message }}
+  </div>
+{% endif %}
+
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Invalid Credentials");
+    document.location = "/login";
+    {% endif %}
+</script>
+{% endblock %}

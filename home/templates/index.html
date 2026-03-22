@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blood Donation{% endblock %}
+{% block css %}{% endblock %}
+{% block body %}
+<style>
+  .card {
+      background: rgba(255, 0, 0, 0.8); /* Semi-transparent blood color */
+      border: none; /* Remove default border */
+      color: #fff; /* Ensure text is white for better contrast */
+  }
+
+  .card h3 {
+      color: #fff; /* White text for the heading */
+  }
+
+  .card:hover {
+      transform: scale(1.05); /* Scale up on hover for effect */
+      transition: transform 0.2s; /* Smooth transition */
+  }
+  .btn-outline-danger {
+    color: #cc0000; /* Text color */
+    background-color: white; /* Background color */
+    border-color: #cc0000; /* Border color */
+    border-radius: 0.5rem;
+}
+
+.btn-outline-danger:hover {
+    color: white; /* Text color on hover */
+    background-color: #cc0000; /* Background color on hover */
+    border-color: #cc0000; /* Border color on hover */
+}
+</style>
+
+<div class="container">
+    <h1 class="text-center mb-4" style="font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Available Donors According To Blood Group</h1>
+    <div class="album py-5">
+        <div class="container">
+            <div class="row">
+                {% for i in all_group %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm" style="background-color: rgba(255, 0, 0, 0.5); border-radius: 10px;">
+                        <div class="card-body">
+                            <h3 class="card-text">Blood Group: {{ i.name }}</h3>
+                            <h3 class="card-text">Total Donor: {{ i.total }}</h3>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn-group">
+                                <a href="/donors_list/{{ i.id }}/" class="btn btn-sm btn-outline-danger">View All Donors</a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
