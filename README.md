@@ -3,13 +3,6 @@
 A full-stack web application built with Django that connects blood donors with people in need, making the donation process faster, easier, and more accessible.
 
 ---
-
-## 🌐 Live Demo
-
-> [https://your-app-name.onrender.com](https://your-app-name.onrender.com) *(update after deployment)*
-
----
-
 ## 📌 Features
 
 - 🏠 **Homepage** – Overview of available blood groups and donor counts
@@ -129,41 +122,14 @@ python manage.py createsuperuser
 # 6. Run the development server
 python manage.py runserver
 ```
-
-Visit: [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
 ---
-
-## 🚀 Deployment (Render)
-
-1. Push your code to GitHub
-2. Go to [render.com](https://render.com) → New Web Service → Connect repo
-3. Set the following:
-   - **Build Command:** `./build.sh`
-   - **Start Command:** `gunicorn BloodDonation.wsgi:application`
-4. Add environment variables:
-
-| Key            | Value                          |
-|----------------|--------------------------------|
-| `SECRET_KEY`   | Your secure Django secret key  |
-| `DEBUG`        | `False`                        |
-| `ALLOWED_HOSTS`| `your-app-name.onrender.com`   |
-
----
-
-## 🔑 Environment Variables
-
-Create a `.env` file in the project root for local development:
-
-```env
-SECRET_KEY=your-secret-key-here
-DEBUG=True
-ALLOWED_HOSTS=127.0.0.1,localhost
-```
-
 ## 📸 Screenshots
 
-> 
+<img width="1920" height="1080" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/6400d6e4-3791-4de2-9f94-1b7eb3b3b4ea" />
+<img width="1920" height="1080" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/0b184310-72f4-47f1-9dde-1caa2e8fa638" />
+<img width="1920" height="1080" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/a4d626db-cd9f-420e-816e-b2d1bd7f87b2" />
+<img width="1920" height="1080" alt="Screenshot (1)" src="https://github.com/user-attachments/assets/acc67598-f7e4-4aba-80a0-d293fdb5bdb5" />
+<img width="1920" height="1080" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/6fb80d49-2ddd-4413-9057-17fee63adb4f" />
 
 ---
 ## 🤝 Contributing
